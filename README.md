@@ -1,5 +1,30 @@
-🚀 FOSSEE Workshop Booking Portal — React RedesignScreening task for the FOSSEE Summer Internship 2025 at IIT Bombay.📖 OverviewThe original site is a Django app handling workshop bookings between Coordinators (colleges) and FOSSEE Instructors.[!IMPORTANT]The Mission: Redesign the frontend in React while maintaining all original pages, flows, and business logic, but with a modern UI/UX overhaul.<details><summary><b>🔍 Initial Audit: Why a redesign was needed? (Click to expand)</b></summary>I ran the original repo locally and identified these key pain points:Visuals: Dated Bootstrap 3 layout with poor information hierarchy.Responsiveness: Zero mobile optimization (critical for a student audience).Navigation: No active-link indicators; filters were awkwardly stacked dropdowns.Feedback: Lack of loading states or inline form validation.</details>🛠️ Setup & DemoBash# Clone the repository
-git clone https://github.com/<your-username>/fossee-workshop-booking.git
+🚀 FOSSEE Workshop Booking Portal — React Redesign
+Screening task for the FOSSEE Summer Internship 2025 at IIT Bombay.
+
+📖 Overview
+The original site is a Django app handling workshop bookings between Coordinators (colleges) and FOSSEE Instructors.
+
+[!IMPORTANT]
+The Mission: Redesign the frontend in React while maintaining all original pages, flows, and business logic, but with a modern UI/UX overhaul.
+
+<details>
+
+I ran the original repo locally and identified these key pain points:
+
+Visuals: Dated Bootstrap 3 layout with poor information hierarchy.
+
+Responsiveness: Zero mobile optimization (critical for a student audience).
+
+Navigation: No active-link indicators; filters were awkwardly stacked dropdowns.
+
+Feedback: Lack of loading states or inline form validation.
+
+</details>
+
+🛠️ Setup & Demo
+Bash
+# Clone the repository
+git clone https://github.com/Venisha24/fossee-workshop-redesign
 
 # Navigate to the project directory
 cd fossee_v3
@@ -8,5 +33,88 @@ cd fossee_v3
 npm install
 
 # Start development server
-npm run dev 
-🌐 Access the AppLocal: http://localhost:5173Network (Mobile Testing): http://10.224.68.251:5173/🔑 Demo CredentialsUse these to test the role-based dashboard logic:RoleEmailPasswordCoordinatorriya@example.com123456Instructorprabhu@iitb.ac.in123456🗺️ Page StructureRoutePageInteractive Features/HomeStats, featured workshops, workflow guide/workshopsListURL-synced filters (Type, State, Level, Status)/workshops/:idDetailContextual booking form in sidebar/loginAuthReal-time form validation/dashboardPortalRole-based views (Coordinator vs. Instructor)💡 Design & Implementation Q&A● What design principles guided your improvements?I prioritized Hierarchy before decoration. I spent more time on spacing and typographic scale than on flashy effects to ensure the page guides the eye to what matters: Workshop Title → Date → Seats → Book Button. I used a warm off-white (#f5f4f0) with a dark orange accent (#d4622a) to ensure readability for students in bright environments while staying true to FOSSEE's brand.● How did you ensure responsiveness across devices?I followed a Mobile-First approach. I wrote the CSS for narrow screens first, then added min-width breakpoints to expand the layout for desktop. On small screens, the sidebar stacks below the main content and forms expand to full-width, ensuring a seamless experience for students accessing the site via smartphones.● What trade-offs did you make between the design and performance?I chose to place the Booking Form in the sidebar rather than on a separate page. While this makes the component logic more complex, it significantly improves UX by maintaining context for the user. Additionally, I opted for plain validation functions instead of a heavy form library to keep the bundle size small and the performance snappy.● What was the most challenging part of the task and how did you approach it?The most challenging part was Syncing URL Parameters with Complex Filters. I wanted users to be able to share a filtered link (e.g., type=Python). I approached this by using React Router's useSearchParams hook to treat the URL as the "source of truth" for the filter state, ensuring the UI and the browser address bar stay perfectly in sync.⚡ UX Enhancements[x] Sticky Filter Bar: Filters stay accessible while scrolling.[x] Contextual UI: Booking forms stay visible alongside workshop details.[x] Modular Dashboard: Replaced long-scrolling pages with tabbed sidebar navigation.[x] Feedback Loops: Inline error messages and simulated loading states for form submissions.🚧 Challenges & Solutions<details><summary><b>💻 Technical Hurdles (Click to expand)</b></summary>Navigation Logic: Chose <Navigate> component over useNavigate hook for auth-guarding to trigger redirects during the render cycle rather than after an event.Component Architecture: Managed a shared AuthContext to handle login/signup/logout states across the entire application without prop-drilling.Mock Data Mapping: Structured the mock arrays to mirror the original Django database models to ensure the frontend is "API-ready."</details>🚀 Future Roadmap[ ] Mobile Bottom Nav: Replace the dashboard sidebar with a tab bar for better thumb-reach.[ ] Real API Integration: Swap mock arrays for React Query hooks.[ ] Interactive Maps: Re-introduce the India workshop map using Leaflet.js.[ ] Infinite Scroll: Implement pagination for the workshop list.📜 Development Log<details><summary><b>View Git Commit History</b></summary>init: scaffold Vite + React + React Routerfeat: add mock data matching FOSSEE Django modelsfeat: add AuthContext for login/signup/logout statefeat: global CSS — tokens, layout, form, button, card stylesfeat: Navbar with mobile hamburger and auth-aware linksfeat: WorkshopCard component with capacity barfeat: Home page — hero, featured workshops, how-it-works, CTAfeat: WorkshopList page — search + multi-filter + URL syncfeat: WorkshopDetail page — meta grid, inline booking formfeat: Dashboard — overview, bookings, propose form, profile tabfix: mobile layout for detail page and dashboarddocs: README with decisions, challenges, and mandatory Q&A</details>Originality Note: This project was built from scratch. Component architecture, design systems, and UX flows are original works, referencing the original Django logic only for data modeling.License: GPL-3.0
+npm run dev
+
+🌐 Access the App
+  ➜  Local:   http://localhost:5173/
+  ➜  Network: http://10.224.68.251:5173/
+
+🔑 Demo Credentials
+Use these to test the role-based dashboard logic:
+Role,        Email,             Password
+Coordinator, riya@example.com,  123456
+Instructor,  prabhu@iitb.ac.in, 123456
+
+🗺️ Page Structure
+Route,Page,Interactive Features
+/,Home,"Stats, featured workshops, workflow guide"
+/workshops,List,"URL-synced filters (Type, State, Level, Status)"
+/workshops/:id,Detail,Contextual booking form in sidebar
+/login,Auth,Real-time form validation
+/dashboard,Portal,Role-based views (Coordinator vs. Instructor)
+
+💡 Design & Implementation Q&A
+● What design principles guided your improvements?
+I prioritized Hierarchy before decoration. I spent more time on spacing and typographic scale than on flashy effects to ensure the page guides the eye to what matters: Workshop Title → Date → Seats → Book Button. I used a warm off-white (#f5f4f0) with a dark orange accent (#d4622a) to ensure readability for students in bright environments while staying true to FOSSEE's brand.
+
+● How did you ensure responsiveness across devices?
+I followed a Mobile-First approach. I wrote the CSS for narrow screens first, then added min-width breakpoints to expand the layout for desktop. On small screens, the sidebar stacks below the main content and forms expand to full-width, ensuring a seamless experience for students accessing the site via smartphones.
+
+● What trade-offs did you make between the design and performance?
+I chose to place the Booking Form in the sidebar rather than on a separate page. While this makes the component logic more complex, it significantly improves UX by maintaining context for the user. Additionally, I opted for plain validation functions instead of a heavy form library to keep the bundle size small and the performance snappy.
+
+● What was the most challenging part of the task and how did you approach it?
+The most challenging part was Syncing URL Parameters with Complex Filters. I wanted users to be able to share a filtered link (e.g., type=Python). I approached this by using React Router's useSearchParams hook to treat the URL as the "source of truth" for the filter state, ensuring the UI and the browser address bar stay perfectly in sync.
+
+⚡ UX Enhancements
+Sticky Filter Bar: Filters stay accessible while scrolling.
+
+Contextual UI: Booking forms stay visible alongside workshop details.
+
+Modular Dashboard: Replaced long-scrolling pages with tabbed sidebar navigation.
+
+Feedback Loops: Inline error messages and simulated loading states for form submissions.
+
+🚧 Challenges & Solutions
+<details>
+
+Navigation Logic: Chose <Navigate> component over useNavigate hook for auth-guarding to trigger redirects during the render cycle.
+
+Component Architecture: Managed a shared AuthContext to handle login/signup/logout states across the application.
+
+Mock Data Mapping: Structured the mock arrays to mirror the original Django database models exactly.
+
+</details>
+
+🚀 Future Roadmap
+[ ] Mobile Bottom Nav: Replace the dashboard sidebar with a tab bar for better mobile access.
+
+[ ] Real API Integration: Swap mock arrays for React Query hooks.
+
+[ ] Interactive Maps: Re-introduce the India workshop map using Leaflet.js.
+
+[ ] Infinite Scroll: Implement pagination for the workshop list.
+
+📜 Development Log
+<details>
+<summary><b>View Git Commit History</b></summary>
+
+init: scaffold Vite + React + React Router
+
+feat: add mock data matching FOSSEE Django models
+feat: add AuthContext for login/signup/logout state
+feat: global CSS — tokens, layout, form, button, card styles
+feat: Navbar with mobile hamburger and auth-aware links
+feat: WorkshopCard component with capacity bar
+feat: Home page — hero, featured workshops, how-it-works, CTA
+feat: WorkshopList page — search + multi-filter + URL sync
+feat: WorkshopDetail page — meta grid, inline booking form
+feat: Dashboard — overview, bookings, propose form, profile tab
+fix: mobile layout for detail page and dashboard
+docs: README with decisions, challenges, and mandatory Q&A
+
+</details>
+
+Originality Note: This project was built from scratch. Component architecture, design systems, and UX flows are original works, referencing the original Django logic only for data modeling.
+
+License: GPL-3.0
