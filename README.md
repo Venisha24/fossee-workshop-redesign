@@ -99,6 +99,8 @@ docs: README with decisions, challenges, what I'd improve
 <img width="1436" height="906" alt="Screenshot 2026-04-13 000115" src="https://github.com/user-attachments/assets/e2fa33e4-4cb0-4b22-b7f9-560d8d32ae65" />
 <img width="1881" height="907" alt="Screenshot 2026-04-13 000236" src="https://github.com/user-attachments/assets/0b7c99ae-e88b-4fd4-81b6-e00e6f7e994a" />
 <img width="1231" height="905" alt="Screenshot 2026-04-13 000206" src="https://github.com/user-attachments/assets/6cfd0162-8689-4adf-af3b-b57a61976305" />
+<img width="1843" height="834" alt="image" src="https://github.com/user-attachments/assets/99b35e1f-7f20-4dfe-a4e9-3478d40e9dc1" />
+
 
 
 
