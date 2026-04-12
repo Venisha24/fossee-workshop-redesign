@@ -1,121 +1,93 @@
-**🚀 FOSSEE Workshop Booking Portal —**
-React Redesign
-Screening task for the FOSSEE Summer Internship 2025 at IIT Bombay.
+# 🚀 FOSSEE Workshop Booking Portal — React Redesign
 
-**📖 Overview**
-The original site is a Django app handling workshop bookings between Coordinators (colleges) and FOSSEE Instructors.
+**Screening Task for the FOSSEE Summer Internship 2025 at IIT Bombay**
 
-[!IMPORTANT]
-The Mission: Redesign the frontend in React while maintaining all original pages, flows, and business logic, but with a modern UI/UX overhaul.
+---
 
-<details>
+## 📖 Overview
+The original platform is a Django-based system that manages workshop bookings between **Coordinators (colleges)** and **FOSSEE Instructors**.
 
-I ran the original repo locally and identified these key pain points:
+> ⚠️ **Mission:**  
+> Redesign the frontend using **React**, while preserving all existing pages, workflows, and business logic — but with a modern, intuitive UI/UX.
 
-Visuals: Dated Bootstrap 3 layout with poor information hierarchy.
+---
 
-Responsiveness: Zero mobile optimization (critical for a student audience).
+## 🛠️ Setup & Demo
 
-Navigation: No active-link indicators; filters were awkwardly stacked dropdowns.
-
-Feedback: Lack of loading states or inline form validation.
-
-</details>
-
-**🛠️ Setup & Demo**
-Bash
-# Clone the repository
+### Clone the Repository
+```bash
 git clone https://github.com/Venisha24/fossee-workshop-redesign
-
-# Navigate to the project directory
 cd fossee_v3
 
-# Install dependencies
+Install Dependencies
 npm install
-
-# Start development server
+Run the App
 npm run dev
+🌐 Access the App
+Local: http://localhost:5173/
+Network: http://10.224.68.251:5173/
+🔑 Demo Credentials
+Role	Email	Password
+Coordinator	riya@example.com
+	123456
+Instructor	prabhu@iitb.ac.in
+	123456
+🗺️ Page Structure
+Route	Page	Features
+/	Home	Stats, featured workshops, workflow guide
+/workshops	List	URL-synced filters (Type, State, Level, Status)
+/workshops/:id	Detail	Contextual booking form in sidebar
+/login	Auth	Real-time form validation
+/dashboard	Portal	Role-based views (Coordinator / Instructor)
+💡 Design & Implementation
+🎯 Design Principles
+Focused on hierarchy before decoration
+Clear visual flow:
+Workshop Title → Date → Seats → Book Button
+Color palette:
+Warm off-white #f5f4f0
+Dark orange accent #d4622a
+Optimized readability for bright environments
+📱 Responsiveness Strategy
+Followed a mobile-first approach
+Used min-width breakpoints for scaling
+Key behaviors:
+Sidebar stacks below content on small screens
+Forms expand to full width for mobile usability
+⚖️ Design vs Performance Trade-offs
+Sidebar booking form improves UX but increases component complexity
+Avoided heavy libraries → used lightweight validation functions
+Result: faster load time + smaller bundle size
+🧠 Biggest Challenge
 
-**🌐 Access the App**
-  ➜  Local:   http://localhost:5173/
-  ➜  Network: http://10.224.68.251:5173/
+Syncing URL Parameters with Complex Filters
 
-**🔑 Demo Credentials**
-Use these to test the role-based dashboard logic:
-Role,        Email,             Password
-Coordinator, riya@example.com,  123456
-Instructor,  prabhu@iitb.ac.in, 123456
+Implemented using useSearchParams (React Router)
+Treated URL as the single source of truth
+Enabled:
+Shareable filtered links
+Consistent UI state
+⚡ UX Enhancements
+✅ Sticky Filter Bar (always accessible)
+✅ Contextual Booking UI (no page switching)
+✅ Modular Dashboard (sidebar navigation)
+✅ Real-time Feedback (validation + loading states)
+🚧 Challenges & Solutions
 
-**🗺️ Page Structure**
-Route,Page,Interactive Features
-/,Home,"Stats, featured workshops, workflow guide"
-/workshops,List,"URL-synced filters (Type, State, Level, Status)"
-/workshops/:id,Detail,Contextual booking form in sidebar
-/login,Auth,Real-time form validation
-/dashboard,Portal,Role-based views (Coordinator vs. Instructor)
+(Expand this section if needed — currently placeholder for future detail)
 
-**💡 Design & Implementation Q&A**
-● What design principles guided your improvements?
-I prioritized Hierarchy before decoration. I spent more time on spacing and typographic scale than on flashy effects to ensure the page guides the eye to what matters: Workshop Title → Date → Seats → Book Button. I used a warm off-white (#f5f4f0) with a dark orange accent (#d4622a) to ensure readability for students in bright environments while staying true to FOSSEE's brand.
+🚀 Future Roadmap
+ Mobile Bottom Navigation (replace sidebar)
+ Real API Integration (React Query)
+ Interactive Maps (Leaflet.js)
+ Infinite Scroll / Pagination
+📜 Development Log
+🔗 View commit history on GitHub
+✨ Built from scratch with original:
+Component architecture
+Design system
+UX flows
+📌 Django backend used only for data modeling reference
+📄 License
 
-● How did you ensure responsiveness across devices?
-I followed a Mobile-First approach. I wrote the CSS for narrow screens first, then added min-width breakpoints to expand the layout for desktop. On small screens, the sidebar stacks below the main content and forms expand to full-width, ensuring a seamless experience for students accessing the site via smartphones.
-
-● What trade-offs did you make between the design and performance?
-I chose to place the Booking Form in the sidebar rather than on a separate page. While this makes the component logic more complex, it significantly improves UX by maintaining context for the user. Additionally, I opted for plain validation functions instead of a heavy form library to keep the bundle size small and the performance snappy.
-
-● What was the most challenging part of the task and how did you approach it?
-The most challenging part was Syncing URL Parameters with Complex Filters. I wanted users to be able to share a filtered link (e.g., type=Python). I approached this by using React Router's useSearchParams hook to treat the URL as the "source of truth" for the filter state, ensuring the UI and the browser address bar stay perfectly in sync.
-
-**⚡ UX Enhancements**
-Sticky Filter Bar: Filters stay accessible while scrolling.
-
-Contextual UI: Booking forms stay visible alongside workshop details.
-
-Modular Dashboard: Replaced long-scrolling pages with tabbed sidebar navigation.
-
-Feedback Loops: Inline error messages and simulated loading states for form submissions.
-
-**🚧 Challenges & Solutions**
-<details>
-
-Navigation Logic: Chose <Navigate> component over useNavigate hook for auth-guarding to trigger redirects during the render cycle.
-
-Component Architecture: Managed a shared AuthContext to handle login/signup/logout states across the application.
-
-Mock Data Mapping: Structured the mock arrays to mirror the original Django database models exactly.
-
-</details>
-
-**🚀 Future Roadmap**
-[ ] Mobile Bottom Nav: Replace the dashboard sidebar with a tab bar for better mobile access.
-
-[ ] Real API Integration: Swap mock arrays for React Query hooks.
-
-[ ] Interactive Maps: Re-introduce the India workshop map using Leaflet.js.
-
-[ ] Infinite Scroll: Implement pagination for the workshop list.
-
-**📜 Development Log**
-<details>
-<summary><b>View Git Commit History</b></summary>
-
-init: scaffold Vite + React + React Router
-
-feat: add mock data matching FOSSEE Django models
-feat: add AuthContext for login/signup/logout state
-feat: global CSS — tokens, layout, form, button, card styles
-feat: Navbar with mobile hamburger and auth-aware links
-feat: WorkshopCard component with capacity bar
-feat: Home page — hero, featured workshops, how-it-works, CTA
-feat: WorkshopList page — search + multi-filter + URL sync
-feat: WorkshopDetail page — meta grid, inline booking form
-feat: Dashboard — overview, bookings, propose form, profile tab
-fix: mobile layout for detail page and dashboard
-docs: README with decisions, challenges, and mandatory Q&A
-
-</details>
-
-Originality Note: This project was built from scratch. Component architecture, design systems, and UX flows are original works, referencing the original Django logic only for data modeling.
-
-**License: GPL-3.0**
+Licensed under GPL-3.0
