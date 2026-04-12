@@ -12,14 +12,14 @@ The original site is a Django app handling workshop bookings between Coordinator
 
 ---
 
-🛠️ Setup & Demo  
+## 🛠️ Setup & Demo  
 
 Clone the Repository  
 ```bash
 git clone https://github.com/Venisha24/fossee-workshop-redesign
 cd fossee_v3
 
-Install Dependencies
+## Install Dependencies
 
 npm install
 
@@ -27,30 +27,28 @@ Run the App
 
 npm run dev
 
-🌐 Access the App
+## 🌐 Access the App
 
 ➜ Local: http://localhost:5173/
 
 ➜ Network: http://10.224.68.251:5173/
 
-🔑 Demo Credentials
+## 🔑 Demo Credentials
 
-Role, Email, Password
-Coordinator, riya@example.com
-, 123456
-Instructor, prabhu@iitb.ac.in
-, 123456
+Role,        Email,            Password
+Coordinator, riya@example.com, 123456
+Instructor, prabhu@iitb.ac.in, 123456
 
-🗺️ Page Structure
+## 🗺️ Page Structure
 
-Route, Page, Features
-/, Home, Stats + featured workshops + workflow guide
-/workshops, List, URL-synced filters (Type, State, Level, Status)
-/workshops/:id, Detail, Booking form in sidebar
-/login, Auth, Real-time validation
-/dashboard, Portal, Role-based views
+Route,          Page,            Features
+/,              Home,            Stats + featured workshops + workflow guide
+/workshops,     List,            URL-synced filters (Type, State, Level, Status)
+/workshops/:id, Detail,          Booking form in sidebar
+/login,         Auth,            Real-time validation
+/dashboard,     Portal,          Role-based views
 
-💡 Design & Implementation
+## 💡 Design & Implementation
 
 ● What design principles guided your improvements?
 I prioritized hierarchy before decoration. The layout guides the eye naturally:
@@ -68,30 +66,50 @@ Used lightweight validation instead of heavy libraries to keep performance fast.
 Syncing URL parameters with filters using useSearchParams.
 The URL acts as the source of truth, enabling shareable filtered links.
 
-⚡ UX Enhancements
+## ⚡ UX Enhancements
 
 Sticky filter bar
 Contextual booking UI
 Modular dashboard navigation
 Real-time feedback (validation + loading states)
 
-🚧 Challenges & Solutions
+## 🚧 Challenges & Solutions
 
-(To be expanded)
+<details>
 
-🚀 Future Roadmap
+Navigation Logic: Chose <Navigate> component over useNavigate hook for auth-guarding to trigger redirects during the render cycle.
+
+Component Architecture: Managed a shared AuthContext to handle login/signup/logout states across the application.
+
+Mock Data Mapping: Structured the mock arrays to mirror the original Django database models exactly.
+
+</details>
+
+## 🚀 Future Roadmap
 
 [ ] Mobile bottom navigation
 [ ] Real API integration
 [ ] Interactive maps (Leaflet.js)
 [ ] Infinite scroll / pagination
 
-📜 Development Log
+## 📜 Development Log
+<details>
 
-Built from scratch
-Original component architecture and UX flows
-Django backend used only for data modeling reference
+init: scaffold Vite + React + React Router
+feat: add mock data matching FOSSEE Django models
+feat: add AuthContext for login/signup/logout state
+feat: global CSS — tokens, layout, form, button, card styles
+feat: Navbar with mobile hamburger and auth-aware links
+feat: WorkshopCard component with capacity bar
+feat: Home page — hero, featured workshops, how-it-works, CTA
+feat: WorkshopList page — search + multi-filter + URL sync
+feat: WorkshopDetail page — meta grid, inline booking form
+feat: Dashboard — overview, bookings, propose form, profile tab
+fix: mobile layout for detail page and dashboard
+docs: README with decisions, challenges, and mandatory Q&A
 
-📄 License
+</details>
 
-GPL-3.0
+Originality Note: This project was built from scratch. Component architecture, design systems, and UX flows are original works, referencing the original Django logic only for data modeling.
+
+License: GPL-3.0
