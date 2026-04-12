@@ -1,7 +1,8 @@
-🚀 FOSSEE Workshop Booking Portal — React Redesign
+**🚀 FOSSEE Workshop Booking Portal —**
+React Redesign
 Screening task for the FOSSEE Summer Internship 2025 at IIT Bombay.
 
-📖 Overview
+**📖 Overview**
 The original site is a Django app handling workshop bookings between Coordinators (colleges) and FOSSEE Instructors.
 
 [!IMPORTANT]
@@ -21,7 +22,7 @@ Feedback: Lack of loading states or inline form validation.
 
 </details>
 
-🛠️ Setup & Demo
+**🛠️ Setup & Demo**
 Bash
 # Clone the repository
 git clone https://github.com/Venisha24/fossee-workshop-redesign
@@ -35,17 +36,17 @@ npm install
 # Start development server
 npm run dev
 
-🌐 Access the App
+**🌐 Access the App**
   ➜  Local:   http://localhost:5173/
   ➜  Network: http://10.224.68.251:5173/
 
-🔑 Demo Credentials
+**🔑 Demo Credentials**
 Use these to test the role-based dashboard logic:
 Role,        Email,             Password
 Coordinator, riya@example.com,  123456
 Instructor,  prabhu@iitb.ac.in, 123456
 
-🗺️ Page Structure
+**🗺️ Page Structure**
 Route,Page,Interactive Features
 /,Home,"Stats, featured workshops, workflow guide"
 /workshops,List,"URL-synced filters (Type, State, Level, Status)"
@@ -53,7 +54,7 @@ Route,Page,Interactive Features
 /login,Auth,Real-time form validation
 /dashboard,Portal,Role-based views (Coordinator vs. Instructor)
 
-💡 Design & Implementation Q&A
+**💡 Design & Implementation Q&A**
 ● What design principles guided your improvements?
 I prioritized Hierarchy before decoration. I spent more time on spacing and typographic scale than on flashy effects to ensure the page guides the eye to what matters: Workshop Title → Date → Seats → Book Button. I used a warm off-white (#f5f4f0) with a dark orange accent (#d4622a) to ensure readability for students in bright environments while staying true to FOSSEE's brand.
 
@@ -66,7 +67,7 @@ I chose to place the Booking Form in the sidebar rather than on a separate page.
 ● What was the most challenging part of the task and how did you approach it?
 The most challenging part was Syncing URL Parameters with Complex Filters. I wanted users to be able to share a filtered link (e.g., type=Python). I approached this by using React Router's useSearchParams hook to treat the URL as the "source of truth" for the filter state, ensuring the UI and the browser address bar stay perfectly in sync.
 
-⚡ UX Enhancements
+**⚡ UX Enhancements**
 Sticky Filter Bar: Filters stay accessible while scrolling.
 
 Contextual UI: Booking forms stay visible alongside workshop details.
@@ -75,7 +76,7 @@ Modular Dashboard: Replaced long-scrolling pages with tabbed sidebar navigation.
 
 Feedback Loops: Inline error messages and simulated loading states for form submissions.
 
-🚧 Challenges & Solutions
+**🚧 Challenges & Solutions**
 <details>
 
 Navigation Logic: Chose <Navigate> component over useNavigate hook for auth-guarding to trigger redirects during the render cycle.
@@ -86,7 +87,7 @@ Mock Data Mapping: Structured the mock arrays to mirror the original Django data
 
 </details>
 
-🚀 Future Roadmap
+**🚀 Future Roadmap**
 [ ] Mobile Bottom Nav: Replace the dashboard sidebar with a tab bar for better mobile access.
 
 [ ] Real API Integration: Swap mock arrays for React Query hooks.
@@ -95,7 +96,7 @@ Mock Data Mapping: Structured the mock arrays to mirror the original Django data
 
 [ ] Infinite Scroll: Implement pagination for the workshop list.
 
-📜 Development Log
+**📜 Development Log**
 <details>
 <summary><b>View Git Commit History</b></summary>
 
@@ -117,4 +118,4 @@ docs: README with decisions, challenges, and mandatory Q&A
 
 Originality Note: This project was built from scratch. Component architecture, design systems, and UX flows are original works, referencing the original Django logic only for data modeling.
 
-License: GPL-3.0
+**License: GPL-3.0**
