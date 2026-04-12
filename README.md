@@ -12,87 +12,65 @@ The original site is a Django app handling workshop bookings between Coordinator
 
 ---
 
-## 🛠️ Setup & Demo  
+# 🛠️ Setup & Demo  
+## Clone the repository
+git clone 
+cd fossee-workshop-booking
 
-Clone the Repository  
-```bash
-git clone https://github.com/Venisha24/fossee-workshop-redesign
-cd fossee_v3
-
-## Install Dependencies
-
+## Install dependencies
 npm install
 
-Run the App
-
+## Start development server
 npm run dev
 
-## 🌐 Access the App
+Local URL: http://localhost:5173
 
-➜ Local: http://localhost:5173/
-
-➜ Network: http://10.224.68.251:5173/
-
-## 🔑 Demo Credentials
-
-Role,        Email,            Password
-Coordinator, riya@example.com, 123456
-Instructor, prabhu@iitb.ac.in, 123456
+Demo Credentials: 📧 riya@example.com | 🔑 123456
 
 ## 🗺️ Page Structure
+Route              Page    Interactive Features
+/                  Home    Stats, featured workshops, workflow guide
+/workshops         List    URL-synced filters (Type, State, Level, Status)
+/workshops/:id     Detail  Contextual booking form in sidebar
+/login             Auth    Real-time form validation
+/dashboard         Portal  Role-based views (Coordinator vs. Instructor)
 
-Route,          Page,            Features
-/,              Home,            Stats + featured workshops + workflow guide
-/workshops,     List,            URL-synced filters (Type, State, Level, Status)
-/workshops/:id, Detail,          Booking form in sidebar
-/login,         Auth,            Real-time validation
-/dashboard,     Portal,          Role-based views
+# 💡 Design Decisions
+## 🎨 Visual Identity
+Warm Light Theme: Used #f5f4f0 (off-white) and #d4622a (FOSSEE orange).
 
-## 💡 Design & Implementation
-
-● What design principles guided your improvements?
-I prioritized hierarchy before decoration. The layout guides the eye naturally:
-Workshop Title → Date → Seats → Book Button.
-Used a warm off-white (#f5f4f0) with a dark orange accent (#d4622a) for readability.
-
-● How did you ensure responsiveness?
-Followed a mobile-first approach. Sidebar stacks below content and forms expand to full width on smaller screens.
-
-● What trade-offs did you make between design and performance?
-Sidebar booking improves UX but increases complexity.
-Used lightweight validation instead of heavy libraries to keep performance fast.
-
-● What was the most challenging part of the task?
-Syncing URL parameters with filters using useSearchParams.
-The URL acts as the source of truth, enabling shareable filtered links.
+Why? Better readability for Indian students on varying screen qualities compared to high-contrast dark modes.
 
 ## ⚡ UX Enhancements
+[x] Sticky Filter Bar: Filters stay accessible while scrolling.
 
-Sticky filter bar
-Contextual booking UI
-Modular dashboard navigation
-Real-time feedback (validation + loading states)
+[x] URL Syncing: Search parameters are saved in the URL for easy sharing.
 
-## 🚧 Challenges & Solutions
+[x] Inline Booking: Form placed in the sidebar to keep workshop details visible.
 
+[x] Modular Dashboard: Replaced long-scrolling pages with a tabbed sidebar navigation.
+
+# 🚧 Challenges & Solutions
 <details>
+
+The require() call in Dashboard.jsx: Used to avoid circular dependencies with form sub-components. Note: Needs refactoring to standard imports for production.
 
 Navigation Logic: Chose <Navigate> component over useNavigate hook for auth-guarding to trigger redirects during the render cycle.
 
-Component Architecture: Managed a shared AuthContext to handle login/signup/logout states across the application.
-
-Mock Data Mapping: Structured the mock arrays to mirror the original Django database models exactly.
+Manual Validation: Opted for custom validation functions over libraries like Formik to keep the bundle light and dependencies clean for this task.
 
 </details>
 
-## 🚀 Future Roadmap
+# 🚀 Future Roadmap
+[ ] Mobile Bottom Nav: Replace the dashboard sidebar with a tab bar for better thumb-reach.
 
-[ ] Mobile bottom navigation
-[ ] Real API integration
-[ ] Interactive maps (Leaflet.js)
-[ ] Infinite scroll / pagination
+[ ] Real API Integration: Swap mock arrays for React Query hooks.
 
-## 📜 Development Log
+[ ] Interactive Maps: Re-introduce the India workshop map using Leaflet.js.
+
+[ ] Infinite Scroll: Implement pagination for the workshop list.
+
+📜 Development Log
 <details>
 
 init: scaffold Vite + React + React Router
@@ -106,10 +84,12 @@ feat: WorkshopList page — search + multi-filter + URL sync
 feat: WorkshopDetail page — meta grid, inline booking form
 feat: Dashboard — overview, bookings, propose form, profile tab
 fix: mobile layout for detail page and dashboard
-docs: README with decisions, challenges, and mandatory Q&A
+
+docs: README with decisions, challenges, what I'd improve
 
 </details>
 
-Originality Note: This project was built from scratch. Component architecture, design systems, and UX flows are original works, referencing the original Django logic only for data modeling.
+## Originality Note: 
+This project was built from scratch. Component architecture, design systems, and UX flows are original works, referencing the original Django logic only for data modeling.
 
-License: GPL-3.0
+# License: GPL-3.0
