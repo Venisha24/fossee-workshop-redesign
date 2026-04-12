@@ -14,19 +14,21 @@ The original site is a Django app handling workshop bookings between Coordinator
 
 # 🛠️ Setup & Demo  
 ## Clone the repository
-git clone 
+git clone https://github.com/Venisha24/fossee-workshop-redesign
 cd fossee-workshop-booking
-
+cd fossee_v3
 ## Install dependencies
 npm install
 
 ## Start development server
 npm run dev
 
-Local URL: http://localhost:5173
-
-Demo Credentials: 📧 riya@example.com | 🔑 123456
-
+  ➜  Local:   http://localhost:5173/
+  ➜  Network: http://10.224.68.251:5173/
+  
+Demo Credentials: instructor :- 📧 prabhu@iitb.ac.in /🔑 123456
+                  coordinator :-📧 riya@example.com | 🔑 123456
+                  
 ## 🗺️ Page Structure
 Route              Page    Interactive Features
 /                  Home    Stats, featured workshops, workflow guide
