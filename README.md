@@ -91,10 +91,9 @@ docs: README with decisions, challenges, what I'd improve
 
 </details>
 
-# Before and After Screenshots
-## Before
-## After
-<img width="415" height="394" alt="Screenshot 2026-04-13 000000" src="https://github.com/user-attachments/assets/31a76737-45fd-4e78-980c-22d3cc32a3bb" />
+# Screenshots of the Re-designed website
+
+<img width="1428" height="755" alt="Screenshot 2026-04-13 123851" src="https://github.com/user-attachments/assets/84b9f968-c843-4f50-bfc6-fe9b1a5e91e1" />
 <img width="817" height="816" alt="Screenshot 2026-04-13 000037" src="https://github.com/user-attachments/assets/b5319e71-e8da-4e30-b997-4e4577a65651" />
 <img width="1436" height="906" alt="Screenshot 2026-04-13 000115" src="https://github.com/user-attachments/assets/e2fa33e4-4cb0-4b22-b7f9-560d8d32ae65" />
 <img width="1881" height="907" alt="Screenshot 2026-04-13 000236" src="https://github.com/user-attachments/assets/0b7c99ae-e88b-4fd4-81b6-e00e6f7e994a" />
