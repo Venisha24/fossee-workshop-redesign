@@ -1,5 +1,7 @@
-// Data shapes mirror the actual Django models in workshop_app/models.py:
-// Profile, Workshop, WorkshopType, State, City, Coordinator, etc.
+// Mock data file used to simulate backend responses
+// Data structure mirrors Django models (Workshop, User, State, etc.)
+// This helps frontend work without a real API
+// List of available workshop types (used for filtering & badges)
 
 export const WORKSHOP_TYPES = [
   { id: 1, name: "Python" },
@@ -10,30 +12,44 @@ export const WORKSHOP_TYPES = [
   { id: 6, name: "Django" },
 ];
 
+// List of Indian states (used in forms and filtering)
 export const STATES = [
   "Maharashtra", "Karnataka", "Tamil Nadu", "Delhi",
   "Telangana", "West Bengal", "Gujarat", "Rajasthan",
   "Uttar Pradesh", "Kerala",
 ];
 
+// Main workshop dataset
+// Each object represents a workshop with full details
 export const WORKSHOPS = [
   {
     id: 1,
     title: "Python for Scientific Computing",
     workshop_type: "Python",
+
+    // Instructor details
     instructor: { id: 2, name: "Dr. Prabhu Ramachandran", email: "prabhu@iitb.ac.in" },
+
+    // Coordinator (organizer) details
     coordinator: { id: 10, name: "Riya Mehta", email: "riya@example.com", institute: "VJTI Mumbai" },
     date: "2025-05-15",
-    duration: 2,
+    duration: 2,  // in days
     location: "IIT Bombay, Mumbai",
     state: "Maharashtra",
+
+    // Seat management
     seats: 40,
     booked: 28,
-    status: "upcoming",   // upcoming | ongoing | completed | cancelled
+
+    // Workshop status: upcoming | ongoing | completed | cancelled
+    status: "upcoming",   
+
+    // Additional details
     description: "A 2-day hands-on workshop covering NumPy, SciPy, Matplotlib and the broader scientific Python ecosystem. Participants are expected to have basic Python knowledge.",
     prerequisites: "Basic Python programming",
     level: "Intermediate",
   },
+
   {
     id: 2,
     title: "FOSSEE Scilab Workshop",
@@ -144,6 +160,7 @@ export const MOCK_USERS = [
   { id: 2,  username: "prabhu_r",   email: "prabhu@iitb.ac.in", role: "instructor", name: "Dr. Prabhu Ramachandran", institute: "IIT Bombay", state: "Maharashtra", phone: "9000000001" },
 ];
 
+// Platform statistics (used in dashboard/landing page)
 export const STATS = {
   total_workshops: 342,
   total_coordinators: 1240,
