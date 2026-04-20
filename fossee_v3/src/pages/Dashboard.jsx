@@ -1,3 +1,6 @@
+// Dashboard component: Main user dashboard that handles navigation between
+// overview, bookings, workshop proposals, profile, and instructor review sections.
+
 import { useState } from "react";
 import { Link, Navigate } from "react-router-dom";
 import { useAuth } from "../context/AuthContext";
@@ -13,6 +16,7 @@ const icons = {
   calendar: <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>,
 };
 
+// Handles dashboard UI, user authentication check, and tab-based navigation
 export default function Dashboard() {
   const { user } = useAuth();
   const [activeTab, setActiveTab] = useState("overview");
@@ -21,9 +25,11 @@ export default function Dashboard() {
   // If not logged in, send to login
   if (!user) return <Navigate to="/login" state={{ from: "/dashboard" }} replace />;
 
+  // Filter upcoming workshops for bookings preview
   const myBookings  = WORKSHOPS.filter(w => w.status === "upcoming").slice(0, 2);
   const pendingReview = WORKSHOPS.filter(w => w.status === "upcoming").slice(1, 4);
 
+  // Navigation items based on user role (instructor gets extra tab)
   const navItems = [
     { id: "overview",  label: "Overview",          icon: icons.home },
     { id: "bookings",  label: "My Bookings",        icon: icons.list },
@@ -196,7 +202,7 @@ function ProposeForm({ user, onSuccess }) {
   const [done,    setDone]    = useState(false);
   const [loading, setLoading] = useState(false);
 
-
+  // Validate form inputs before submission
   function validate() {
     const e = {};
     if (!form.workshop_type)         e.workshop_type         = "Select a workshop type";
@@ -206,7 +212,7 @@ function ProposeForm({ user, onSuccess }) {
     if (!form.expected_participants) e.expected_participants = "Estimate the number of participants";
     return e;
   }
-
+  // Handle form submission and simulate API request
   function handleSubmit(e) {
     e.preventDefault();
     const errs = validate();
