@@ -101,7 +101,7 @@ function PieChart() {
   );
 }
 
-// ── Bar chart for monthly count ──────────────────────────────────────────────
+// ── Bar chart for monthly count (Displays number of workshops conducted per month)──────────────────────────────────────────────
 function MonthlyBarChart() {
   const canvasRef = useRef(null);
   const chartRef  = useRef(null);
@@ -172,6 +172,10 @@ const STATE_PALETTE = [
   "#e0d898","#bcd8a0","#d8e8c0","#c0e0d0",
 ];
 
+// Each state is displayed with a unique color
+// Workshop locations are plotted as bubbles based on latitude/longitude
+// Bubble size and color indicate number of workshops
+// Tooltips show detailed information on hover
 function IndiaMap() {
   const containerRef = useRef(null);
   const builtRef     = useRef(false);
@@ -196,7 +200,9 @@ function IndiaMap() {
     s.onload = () => buildMap();
     s.onerror = () => setError(true);
     document.head.appendChild(s);
-
+    
+    // Builds the SVG map using D3 after scripts are loaded
+    // Converts TopoJSON → GeoJSON and renders states + workshop markers
     function buildMap() {
       if (builtRef.current) return;
       builtRef.current = true;
@@ -379,6 +385,8 @@ function IndiaMap() {
 
 
 // ── Main Statistics Page ─────────────────────────────────────────────────────
+// Displays overall analytics dashboard including summary cards, charts, and maps
+// Also conditionally renders instructor-specific insights
 export default function Statistics() {
   const { user } = useAuth();
   const isInstructor = user?.role === "instructor";
@@ -514,7 +522,9 @@ export default function Statistics() {
   );
 }
 
-// ── Coordinator profile card with comments ───────────────────────────────────
+// ── Coordinator profile card ───────────────────────────────────
+// Displays coordinator details along with workshop info
+// Includes interactive comments section for instructor feedback
 function CoordinatorProfileCard({ workshop }) {
   const [comments, setComments] = useState([
     { id: 1, author: "Dr. Prabhu", text: "Good follow-up on the event logistics.", time: "2 days ago" },
