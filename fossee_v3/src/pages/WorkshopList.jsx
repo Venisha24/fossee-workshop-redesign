@@ -3,21 +3,25 @@ import { useSearchParams } from "react-router-dom";
 import { WORKSHOPS, WORKSHOP_TYPES, STATES } from "../data/mockData";
 import WorkshopCard from "../components/WorkshopCard";
 
+// Available workshop levels and status options for filtering
 const LEVELS = ["Beginner", "Intermediate", "Advanced"];
 const STATUSES = ["upcoming", "completed"];
 
 export default function WorkshopList() {
+
+  // Get URL query parameters (used for sharing/filter links)
   const [params, setParams] = useSearchParams();
 
-  // initialise filter state from URL query params so links like
-  // /workshops?type=Python work properly (matches original site behaviour)
+  // Initialize filter states from URL query params
+  // This allows links like /workshops?type=Python to pre-filter results
   const [search, setSearch]   = useState(params.get("search") || "");
   const [type,   setType]     = useState(params.get("type")   || "");
   const [state,  setState]    = useState(params.get("state")  || "");
   const [level,  setLevel]    = useState(params.get("level")  || "");
   const [status, setStatus]   = useState(params.get("status") || "upcoming");
 
-  // keep URL in sync with filters — nice for sharing links
+  // Sync filter state with URL query parameters
+  // Useful for bookmarking and sharing filtered results
   useEffect(() => {
     const p = {};
     if (search) p.search = search;
@@ -27,13 +31,18 @@ export default function WorkshopList() {
     if (status && status !== "upcoming") p.status = status;
     setParams(p, { replace: true });
   }, [search, type, state, level, status]);
-
+  
+  // Memoized filtering to improve performance
+  // Filters workshops based on selected criteria
   const filtered = useMemo(() => {
+    // Apply filters one by one (status, type, state, level, search)
     return WORKSHOPS.filter(w => {
       if (status && w.status !== status) return false;
       if (type   && w.workshop_type !== type) return false;
       if (state  && w.state !== state) return false;
       if (level  && w.level !== level) return false;
+
+      // Perform case-insensitive search across multiple fields
       if (search) {
         const q = search.toLowerCase();
         return (
@@ -46,11 +55,13 @@ export default function WorkshopList() {
       return true;
     });
   }, [search, type, state, level, status]);
-
+  
+  // Reset all filters to default values
   function clearFilters() {
     setSearch(""); setType(""); setState(""); setLevel(""); setStatus("upcoming");
   }
-
+  
+  // Check if any filter is currently active
   const hasFilters = search || type || state || level;
 
   return (
@@ -64,7 +75,7 @@ export default function WorkshopList() {
         </p>
       </div>
 
-      {/* ── Status tabs ────────────────────────────────── */}
+      {/* ── Status tabs (Upcoming / Completed)────────────────────────────────── */}
       <div style={{ display: "flex", gap: ".5rem", marginBottom: "1rem", flexWrap: "wrap" }}>
         {STATUSES.map(s => (
           <button
@@ -77,9 +88,10 @@ export default function WorkshopList() {
         ))}
       </div>
 
-      {/* ── Filters bar ────────────────────────────────── */}
+      {/* ── Filters bar (search, type, state, level)────────────────────────────────── */}
       <div className="filters-bar">
-        {/* search */}
+        
+        {/* Search input for title, instructor, location, etc. */}
         <div className="filter-search">
           <span className="search-icon">
             <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
