@@ -1,15 +1,36 @@
+<!-- Defines HTML5 document type -->
 <!doctype html>
+
+<!-- Root HTML element with language set to English -->
 <html lang="en">
+  
+  <!-- Head section contains metadata, SEO tags, and page configuration -->
   <head>
+
+    <!-- Set character encoding to UTF-8 for proper text rendering -->
     <meta charset="UTF-8" />
+
+    <!-- Ensures responsive design across devices -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Meta description for search engines -->
     <meta name="description" content="Book free open-source workshops on Python, Scilab, FreeCAD and more — offered by FOSSEE, IIT Bombay. Open to students and educators across India." />
+
+    <!-- Keywords to improve search engine visibility -->
     <meta name="keywords" content="FOSSEE, IIT Bombay, Python workshop, Scilab, FreeCAD, open source, free workshops India" />
+
+    <!-- Author of the website -->
     <meta name="author" content="FOSSEE, IIT Bombay" />
+
+    <!-- Open Graph tags for better preview when shared on social media -->
     <meta property="og:title" content="FOSSEE Workshop Booking Portal · IIT Bombay" />
     <meta property="og:description" content="Book free open-source science workshops. Python, Scilab, OpenModelica and more." />
     <meta property="og:type" content="website" />
+
+    <!-- Sets browser UI theme color (mainly for mobile devices) -->
     <meta name="theme-color" content="#f5f4f0" />
+
+    <!-- Structured data for SEO (helps search engines understand website content) -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -22,10 +43,18 @@
       }
     }
     </script>
+
+    <!-- Title displayed in browser tab -->
     <title>FOSSEE Workshop Booking · IIT Bombay</title>
   </head>
+
+  <!-- Main body where React app will be mounted -->
   <body>
+
+    <!-- Root container for React application -->
     <div id="root"></div>
+
+    <!-- Entry point script that loads the React app -->
     <script type="module" src="/src/main.jsx"></script>
   </body>
 </html>
