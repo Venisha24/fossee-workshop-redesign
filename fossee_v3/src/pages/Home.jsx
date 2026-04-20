@@ -12,19 +12,27 @@ export default function Home() {
       <section className="hero">
         <div className="page-wrap">
           <div className="hero-inner">
+
+            {/* Left side: title, description, CTA buttons */}
             <div className="hero-left">
               <div className="hero-eyebrow">
                 🎓 IIT Bombay · FOSSEE Initiative
               </div>
+
+              {/* Main heading */}
               <h1>
                 Book open-source<br />
                 <span>science workshops</span><br />
                 across India
               </h1>
+
+              {/* Short description */}
               <p>
                 Coordinators propose workshops. Instructors accept them.
                 Students learn Python, Scilab, FreeCAD and more — free of cost.
               </p>
+
+              {/* Call-to-action buttons */}
               <div className="hero-btns">
                 <Link to="/workshops" className="btn btn-primary btn-lg">
                   Browse Workshops
@@ -33,6 +41,8 @@ export default function Home() {
                   Register as Coordinator
                 </Link>
               </div>
+
+              {/* Platform statistics (dynamic from mock data) */}
               <div className="hero-stats">
                 {[
                   [STATS.total_workshops + "+", "Workshops Conducted"],
@@ -51,6 +61,8 @@ export default function Home() {
             {/* mini preview card — gives visitor a sense of what's inside */}
             <div className="hero-card">
               <div className="hero-card-title">Live workshops this month</div>
+
+              {/* Show 4 upcoming workshops as preview */}
               {WORKSHOPS.filter(w => w.status === "upcoming").slice(0, 4).map(w => (
                 <div className="hero-card-line" key={w.id}>
                   <span className="dot" />
@@ -58,11 +70,15 @@ export default function Home() {
                     <div style={{ fontWeight: 600, fontSize: ".84rem", color: "var(--text)" }}>
                       {w.title}
                     </div>
+
+                    {/* Format date for display */}
                     <div style={{ fontSize: ".75rem" }}>
                       {new Date(w.date).toLocaleDateString("en-IN", { day: "numeric", month: "short" })}
                       &nbsp;·&nbsp; {w.location}
                     </div>
                   </div>
+
+                  {/* Workshop type badge */}
                   <span className={`badge badge-${w.workshop_type.toLowerCase()}`} style={{ fontSize: ".65rem" }}>
                     {w.workshop_type}
                   </span>
@@ -80,7 +96,11 @@ export default function Home() {
       <section style={{ background: "var(--bg2)", borderBottom: "1px solid var(--border)", padding: "1.5rem 0" }}>
         <div className="page-wrap">
           <div style={{ display: "flex", gap: "1rem", flexWrap: "wrap", alignItems: "center" }}>
+
+            {/* Label */}
             <span className="label" style={{ marginRight: ".25rem" }}>Topics:</span>
+
+            {/* Filter links for each workshop type */}
             {WORKSHOP_TYPES.map(t => (
               <Link
                 key={t.id}
@@ -103,6 +123,8 @@ export default function Home() {
             <h2>Upcoming Workshops</h2>
             <Link to="/workshops" className="btn btn-ghost btn-sm">View all →</Link>
           </div>
+
+          {/* Display selected featured workshops */}
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(300px, 1fr))", gap: "1.25rem" }}>
             {featured.map(w => <WorkshopCard key={w.id} w={w} />)}
           </div>
@@ -111,6 +133,8 @@ export default function Home() {
         {/* ── How it works ────────────────────────────────── */}
         <section className="section-gap">
           <h2 style={{ marginBottom: "1.75rem" }}>How it works</h2>
+
+          {/* Step-by-step workflow */}
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(220px, 1fr))", gap: "1.25rem" }}>
             {[
               { step: "01", title: "Coordinator registers", desc: "A coordinator from any college or institute creates an account and proposes a workshop date and location." },
@@ -145,6 +169,8 @@ export default function Home() {
               Register as a coordinator and propose a free FOSSEE workshop at your institute.
             </p>
           </div>
+
+          {/* CTA button */}
           <Link to="/signup" className="btn btn-primary btn-lg">
             Get Started →
           </Link>
