@@ -1,6 +1,7 @@
+/* Import custom fonts used across the application */
 @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
 
-/* ── Tokens ──────────────────────────────────────────────────────────── */
+/* ── Global design tokens (colors, spacing, typography, shadows) ──────────────────────────────────────────────────────────── */
 :root {
   --bg:       #f5f4f0;
   --bg2:      #fffffe;
@@ -24,9 +25,11 @@
   --trans:    0.2s ease;
 }
 
-/* ── Reset ───────────────────────────────────────────────────────────── */
+/* ── Reset default browser styles for consistency across devices ───────────────────────────────────────────────────────────── */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 html { font-size: 16px; scroll-behavior: smooth; }
+
+/* Base styling for body (font, background, text rendering) */
 body {
   background: var(--bg);
   color: var(--text);
@@ -42,12 +45,12 @@ a       { color: inherit; text-decoration: none; }
 ul, ol  { list-style: none; }
 img     { max-width: 100%; display: block; }
 
-/* ── Layout helpers ──────────────────────────────────────────────────── */
+/* ── Utility classes for page layout and spacing ──────────────────────────────────────────────────── */
 .page-wrap   { max-width: 1160px; margin: 0 auto; padding: 0 1.25rem; }
 .page-top    { padding-top: calc(var(--nav-h) + 2rem); padding-bottom: 4rem; }
 .section-gap { margin-top: 3.5rem; }
 
-/* ── Typography ──────────────────────────────────────────────────────── */
+/* ── Typography styles for headings, paragraphs, and labels ──────────────────────────────────────────────────────── */
 h1 { font-size: clamp(1.75rem, 4vw, 2.6rem); font-weight: 700; letter-spacing: -.02em; line-height: 1.15; }
 h2 { font-size: clamp(1.35rem, 3vw, 1.9rem); font-weight: 700; letter-spacing: -.015em; }
 h3 { font-size: 1.15rem; font-weight: 600; }
@@ -57,7 +60,7 @@ p  { color: var(--text2); }
   text-transform: uppercase; color: var(--text3);
 }
 
-/* ── Buttons ─────────────────────────────────────────────────────────── */
+/* ── Reusable button styles (primary, outline, ghost, sizes) ─────────────────────────────────────────────────────────── */
 .btn {
   display: inline-flex; align-items: center; justify-content: center;
   gap: .45rem; padding: .6rem 1.35rem; border-radius: var(--radius);
@@ -84,7 +87,7 @@ p  { color: var(--text2); }
 .btn-full { width: 100%; }
 .btn:disabled { opacity: .5; cursor: not-allowed; transform: none !important; }
 
-/* ── Cards ───────────────────────────────────────────────────────────── */
+/* ── Card component styling used across dashboards and lists ───────────────────────────────────────────────────────────── */
 .card {
   background: var(--bg2); border: 1px solid var(--border);
   border-radius: var(--radius-lg); padding: 1.4rem;
@@ -92,7 +95,7 @@ p  { color: var(--text2); }
 }
 .card:hover { box-shadow: var(--shadow-lg); transform: translateY(-2px); }
 
-/* ── Form elements ───────────────────────────────────────────────────── */
+/* ── FForm inputs, labels, validation states ───────────────────────────────────────────────────── */
 .form-group { display: flex; flex-direction: column; gap: .4rem; }
 .form-group label { font-size: .85rem; font-weight: 600; color: var(--text); }
 .form-group .hint { font-size: .78rem; color: var(--text3); }
@@ -107,7 +110,7 @@ p  { color: var(--text2); }
 .error-msg { font-size: .78rem; color: var(--danger); }
 .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
 
-/* ── Badges ──────────────────────────────────────────────────────────── */
+/* ── Badge styles for workshop types, levels, and statuses ──────────────────────────────────────────────────────────── */
 .badge {
   display: inline-flex; align-items: center; padding: .22rem .7rem;
   border-radius: 99px; font-size: .72rem; font-weight: 600;
@@ -126,7 +129,7 @@ p  { color: var(--text2); }
 .badge-intermediate{ background:#fefce8; color:#854d0e; }
 .badge-advanced    { background:#fdf4ff; color:#701a75; }
 
-/* ── Navbar ──────────────────────────────────────────────────────────── */
+/* ── Navigation bar styling including logo, links, and mobile menu ──────────────────────────────────────────────────────────── */
 .navbar {
   position: fixed; top: 0; left: 0; right: 0; z-index: 200;
   height: var(--nav-h);
@@ -177,7 +180,7 @@ p  { color: var(--text2); }
 .mobile-menu.open { display: flex; }
 .mobile-menu .nav-link { width: 100%; padding: .65rem .85rem; }
 
-/* ── Hero ────────────────────────────────────────────────────────────── */
+/* ── Landing page hero section with intro content and stats ────────────────────────────────────────────────────────────── */
 .hero {
   padding: calc(var(--nav-h) + 3.5rem) 0 4rem;
   background: var(--bg2); border-bottom: 1px solid var(--border);
@@ -222,7 +225,7 @@ p  { color: var(--text2); }
 }
 @keyframes pulse-dot { 0%,100%{opacity:.5}50%{opacity:1} }
 
-/* ── Workshop filters ────────────────────────────────────────────────── */
+/* ── Filters bar for searching and filtering workshops ────────────────────────────────────────────────── */
 .filters-bar {
   display: flex; flex-wrap: wrap; gap: .75rem;
   align-items: center;
@@ -254,7 +257,7 @@ p  { color: var(--text2); }
 .filter-chip:hover { border-color: var(--accent); color: var(--accent); }
 .filter-chip.active { background: var(--accent); border-color: var(--accent); color: #fff; }
 
-/* ── Workshop card ───────────────────────────────────────────────────── */
+/* ── Individual workshop card styling for listing page ───────────────────────────────────────────────────── */
 .workshop-card {
   background: var(--bg2); border: 1px solid var(--border);
   border-radius: var(--radius-lg); overflow: hidden;
@@ -285,7 +288,7 @@ p  { color: var(--text2); }
 .seats-fill.full { background: var(--danger); }
 .seats-fill.warn { background: var(--warning); }
 
-/* ── Workshop detail ─────────────────────────────────────────────────── */
+/* ── Layout for workshop detail page and booking sidebar ─────────────────────────────────────────────────── */
 .workshop-detail-grid {
   display: grid; grid-template-columns: 1fr 340px; gap: 2rem; align-items: start;
 }
@@ -299,7 +302,7 @@ p  { color: var(--text2); }
 .sidebar-info-row span:first-child { color: var(--text2); }
 .sidebar-info-row span:last-child { font-weight: 600; }
 
-/* ── Auth pages ──────────────────────────────────────────────────────── */
+/* ── Login and Signup page layout and styling ──────────────────────────────────────────────────────── */
 .auth-layout {
   min-height: 100vh; display: grid; grid-template-columns: 1fr 1fr;
   background: var(--bg2);
@@ -350,7 +353,7 @@ p  { color: var(--text2); }
 .auth-switch a { color: var(--accent); font-weight: 600; }
 .auth-switch a:hover { text-decoration: underline; }
 
-/* ── Dashboard ───────────────────────────────────────────────────────── */
+/* ── Dashboard layout including sidebar and stats cards ───────────────────────────────────────────────────────── */
 .dashboard-layout {
   display: grid; grid-template-columns: 240px 1fr;
   min-height: calc(100vh - var(--nav-h)); margin-top: var(--nav-h);
@@ -379,7 +382,7 @@ p  { color: var(--text2); }
 .stat-card-num { font-size: 1.75rem; font-weight: 700; margin-bottom: .2rem; }
 .stat-card-label { font-size: .8rem; color: var(--text2); }
 
-/* ── Booking form ────────────────────────────────────────────────────── */
+/* ── Multi-step booking form layout and progress indicators ────────────────────────────────────────────────────── */
 .booking-layout { display: grid; grid-template-columns: 1fr 360px; gap: 2rem; align-items: start; }
 .booking-steps {
   display: flex; gap: 0; margin-bottom: 2rem;
@@ -395,11 +398,11 @@ p  { color: var(--text2); }
 .booking-step.active { background: var(--accent); color: #fff; }
 .booking-step.done { background: var(--bg3); color: var(--text2); }
 
-/* ── Progress bar ────────────────────────────────────────────────────── */
+/* ── Progress bar component used in forms and stats ────────────────────────────────────────────────────── */
 .progress { height: 6px; background: var(--border); border-radius: 99px; overflow: hidden; }
 .progress-fill { height: 100%; border-radius: 99px; background: var(--accent); transition: width .4s ease; }
 
-/* ── Empty state ─────────────────────────────────────────────────────── */
+/* ── UI for displaying empty results (no data found) ─────────────────────────────────────────────────────── */
 .empty-state {
   text-align: center; padding: 4rem 1rem;
   display: flex; flex-direction: column; align-items: center; gap: 1rem;
@@ -408,7 +411,7 @@ p  { color: var(--text2); }
 .empty-state h3 { color: var(--text); }
 .empty-state p { max-width: 30ch; }
 
-/* ── Toast ───────────────────────────────────────────────────────────── */
+/* ── Toast notification styling for success/error messages ───────────────────────────────────────────────────────────── */
 .toast-container {
   position: fixed; bottom: 1.5rem; right: 1.5rem;
   z-index: 999; display: flex; flex-direction: column; gap: .5rem;
@@ -424,7 +427,7 @@ p  { color: var(--text2); }
 .toast.error   { background: var(--danger); }
 @keyframes slide-up { from{opacity:0;transform:translateY(12px)} to{opacity:1;transform:none} }
 
-/* ── Footer ──────────────────────────────────────────────────────────── */
+/* ── Footer layout and links styling ──────────────────────────────────────────────────────────── */
 .footer {
   background: var(--text); color: rgba(255,255,255,.65);
   padding: 3rem 0 1.5rem; margin-top: auto;
@@ -444,7 +447,7 @@ p  { color: var(--text2); }
   font-size: .8rem;
 }
 
-/* ── Responsive ──────────────────────────────────────────────────────── */
+/* ── Media queries for responsive layout across devices ──────────────────────────────────────────────────────── */
 @media (max-width: 1024px) {
   .hero-inner { grid-template-columns: 1fr; }
   .hero-card { display: none; }
@@ -479,12 +482,12 @@ p  { color: var(--text2); }
   .filter-chip { font-size: 1rem; min-height: 48px; padding: .5rem 1.15rem; }
 }
 
-/* ── Scrollbar ───────────────────────────────────────────────────────── */
+/* ── Custom scrollbar styling for better UI consistency ───────────────────────────────────────────────────────── */
 ::-webkit-scrollbar { width: 5px; height: 5px; }
 ::-webkit-scrollbar-track { background: var(--bg3); }
 ::-webkit-scrollbar-thumb { background: var(--border); border-radius: 3px; }
 
-/* ── Statistics page responsive ──────────────────────── */
+/* ── Layout for statistics page (map + side panel) ──────────────────────── */
 .stats-map-grid {
   display: grid;
   grid-template-columns: 1fr 340px;
