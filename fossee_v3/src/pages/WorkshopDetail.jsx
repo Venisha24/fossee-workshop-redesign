@@ -3,6 +3,7 @@ import { useParams, Link, useNavigate } from "react-router-dom";
 import { WORKSHOPS } from "../data/mockData";
 import { useAuth } from "../context/AuthContext";
 
+// Map workshop types to badge styles
 const TYPE_BADGE = {
   Python:"badge-python", Scilab:"badge-scilab", OpenModelica:"badge-openmodelica",
   DWSIM:"badge-dwsim", FreeCAD:"badge-freecad", Django:"badge-django",
@@ -28,12 +29,14 @@ export default function WorkshopDetail() {
       </div>
     </div>
   );
-
+  
+  // Calculate remaining seats and booking percentage
   const left  = w.seats - w.booked;
   const pct   = Math.round((w.booked / w.seats) * 100);
   const full  = left <= 0;
   const dateStr = new Date(w.date).toLocaleDateString("en-IN", { weekday:"long", day:"numeric", month:"long", year:"numeric" });
-
+  
+  // Validate form inputs before submission
   function validate() {
     const e = {};
     if (!form.name.trim())  e.name  = "Name is required";
@@ -42,7 +45,8 @@ export default function WorkshopDetail() {
     if (!form.institute.trim()) e.institute = "Institute name is required";
     return e;
   }
-
+  
+  // Handle booking form submission
   function handleSubmit(e) {
     e.preventDefault();
     const errs = validate();
