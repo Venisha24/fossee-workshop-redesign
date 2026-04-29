@@ -102,19 +102,21 @@ The original dashboard was basically one long page with sections. I split it int
 # 📜 Development Log
 
 
-init: scaffold Vite + React + React Router
-feat: add mock data matching FOSSEE Django models
-feat: add AuthContext for login/signup/logout state
-feat: global CSS — tokens, layout, form, button, card styles
-feat: Navbar with mobile hamburger and auth-aware links
-feat: WorkshopCard component with capacity bar
-feat: Home page — hero, featured workshops, how-it-works, CTA
-feat: WorkshopList page — search + multi-filter + URL sync
-feat: WorkshopDetail page — meta grid, inline booking form
-feat: Dashboard — overview, bookings, propose form, profile tab
-fix: mobile layout for detail page and dashboard
+| Type  | Description |
+|-------|-------------|
+| init  | Scaffolded Vite + React + React Router setup |
+| feat  | Added mock data aligned with FOSSEE Django models |
+| feat  | Implemented AuthContext for login/signup/logout state management |
+| feat  | Created global CSS (design tokens, layout, forms, buttons, cards) |
+| feat  | Built responsive Navbar with mobile hamburger and auth-aware links |
+| feat  | Developed WorkshopCard component with capacity visualization |
+| feat  | Designed Home page (hero section, featured workshops, process flow, CTA) |
+| feat  | Built WorkshopList page with search, multi-filter, and URL sync |
+| feat  | Created WorkshopDetail page with metadata grid and booking form |
+| feat  | Developed Dashboard (overview, bookings, proposal form, profile section) |
+| fix   | Resolved mobile layout issues in detail page and dashboard |
 
-docs: README with decisions, challenges, what I'd improve
+
 
 # 🧠 Reasoning
 ## 1. What design principles guided your improvements?
