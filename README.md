@@ -151,8 +151,12 @@ Iteratively tested layouts across screen sizes.
 Refactored code to remove redundancy and improve maintainability.
 Focused on progressive enhancement instead of adding unnecessary complexity.
 
-# Screenshots of the Re-designed website
-
+# Before and After Screenshots
+<p align="center">
+  <img width="651" height="497" alt="image" src="https://github.com/user-attachments/assets/93c2c415-6349-4a5f-88b9-3c02e0ee437c" />
+  <img width="1428" height="755" alt="Screenshot 2026-04-13 123851" src="https://github.com/user-attachments/assets/84b9f968-c843-4f50-bfc6-fe9b1a5e91e1" />
+</p>
+<img width="651" height="497" alt="image" src="https://github.com/user-attachments/assets/93c2c415-6349-4a5f-88b9-3c02e0ee437c" />
 <img width="1428" height="755" alt="Screenshot 2026-04-13 123851" src="https://github.com/user-attachments/assets/84b9f968-c843-4f50-bfc6-fe9b1a5e91e1" />
 <img width="817" height="816" alt="Screenshot 2026-04-13 000037" src="https://github.com/user-attachments/assets/b5319e71-e8da-4e30-b997-4e4577a65651" />
 <img width="1436" height="906" alt="Screenshot 2026-04-13 000115" src="https://github.com/user-attachments/assets/e2fa33e4-4cb0-4b22-b7f9-560d8d32ae65" />
