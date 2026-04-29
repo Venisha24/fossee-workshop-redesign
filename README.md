@@ -153,34 +153,37 @@ Focused on progressive enhancement instead of adding unnecessary complexity.
 
 # Before and After Screenshots
 
+# Before and After Screenshots
+
 ### Login
 
 | Before | After |
 |--------|-------|
-| <img width="649" height="494" alt="image" src="https://github.com/user-attachments/assets/9dddad6f-db20-4bf9-9eb9-06d8969ad9b4" />
- | <img width="1782" height="902" alt="image" src="https://github.com/user-attachments/assets/03ec669c-3c6f-4fca-9e4b-d8411810f84c" />
- |
- ### Register
+| <img src="https://github.com/user-attachments/assets/9dddad6f-db20-4bf9-9eb9-06d8969ad9b4" width="100%"> | <img src="https://github.com/user-attachments/assets/03ec669c-3c6f-4fca-9e4b-d8411810f84c" width="100%"> |
+
+---
+
+### Register
 
 | Before | After |
 |--------|-------|
-| <img width="778" height="600" alt="image" src="https://github.com/user-attachments/assets/eae14d0c-cd53-46cf-9cce-47d3b2e5c94a" />
- | <img width="1843" height="834" alt="image" src="https://github.com/user-attachments/assets/99b35e1f-7f20-4dfe-a4e9-3478d40e9dc1" /> |
+| <img src="https://github.com/user-attachments/assets/eae14d0c-cd53-46cf-9cce-47d3b2e5c94a" width="100%"> | <img src="https://github.com/user-attachments/assets/99b35e1f-7f20-4dfe-a4e9-3478d40e9dc1" width="100%"> |
+
+---
 
 ### Statistics
 
 | Before | After |
 |--------|-------|
-| <img width="641" height="378" alt="image" src="https://github.com/user-attachments/assets/49eb0570-0b09-4a3a-8e20-59bafb489137" />
- | <img width="1436" height="906" alt="Screenshot 2026-04-13 000115" src="https://github.com/user-attachments/assets/e2fa33e4-4cb0-4b22-b7f9-560d8d32ae65" /> |
+| <img src="https://github.com/user-attachments/assets/49eb0570-0b09-4a3a-8e20-59bafb489137" width="100%"> | <img src="https://github.com/user-attachments/assets/e2fa33e4-4cb0-4b22-b7f9-560d8d32ae65" width="100%"> |
+
+---
 
 ### Workshop Types
 
 | Before | After |
 |--------|-------|
-| <img width="605" height="415" alt="image" src="https://github.com/user-attachments/assets/8ffb7c50-285e-4d3d-aacb-4ecf445dbf78" />
- | <img width="817" height="816" alt="Screenshot 2026-04-13 000037" src="https://github.com/user-attachments/assets/b5319e71-e8da-4e30-b997-4e4577a65651" /> |
-
+| <img src="https://github.com/user-attachments/assets/8ffb7c50-285e-4d3d-aacb-4ecf445dbf78" width="100%"> | <img src="https://github.com/user-attachments/assets/b5319e71-e8da-4e30-b997-4e4577a65651" width="100%"> |
 # Screenshots of Redesigned Site
 <img width="1428" height="755" alt="Screenshot 2026-04-13 123851" src="https://github.com/user-attachments/assets/84b9f968-c843-4f50-bfc6-fe9b1a5e91e1" />
 <img width="817" height="816" alt="Screenshot 2026-04-13 000037" src="https://github.com/user-attachments/assets/b5319e71-e8da-4e30-b997-4e4577a65651" />
