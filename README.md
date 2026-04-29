@@ -155,7 +155,7 @@ Focused on progressive enhancement instead of adding unnecessary complexity.
 
 # Before and After Screenshots
 
-# Before and After Screenshots
+
 
 ### Login
 
