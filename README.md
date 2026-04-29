@@ -24,7 +24,7 @@ I cloned the original repo and ran it locally first. A few things immediately st
 # 🛠️ Setup & Demo  
 ## Clone the repository
 git clone https://github.com/Venisha24/fossee-workshop-redesign
-cd fossee-workshop-booking
+cd fossee-workshop-redesign-main
 cd fossee_v3
 ## Install dependencies
 npm install
@@ -152,12 +152,52 @@ Refactored code to remove redundancy and improve maintainability.
 Focused on progressive enhancement instead of adding unnecessary complexity.
 
 # Before and After Screenshots
+
+### Login
+
+| Before | After |
+|--------|-------|
+| <img width="649" height="494" alt="image" src="https://github.com/user-attachments/assets/9dddad6f-db20-4bf9-9eb9-06d8969ad9b4" />
+ | <img width="1782" height="902" alt="image" src="https://github.com/user-attachments/assets/03ec669c-3c6f-4fca-9e4b-d8411810f84c" />
+ |
+ ### Register
+
+| Before | After |
+|--------|-------|
+| <img width="778" height="600" alt="image" src="https://github.com/user-attachments/assets/eae14d0c-cd53-46cf-9cce-47d3b2e5c94a" />
+ | <img width="1843" height="834" alt="image" src="https://github.com/user-attachments/assets/99b35e1f-7f20-4dfe-a4e9-3478d40e9dc1" /> |
+
+### Statistics
+
+| Before | After |
+|--------|-------|
+| <img width="641" height="378" alt="image" src="https://github.com/user-attachments/assets/49eb0570-0b09-4a3a-8e20-59bafb489137" />
+ | <img width="1436" height="906" alt="Screenshot 2026-04-13 000115" src="https://github.com/user-attachments/assets/e2fa33e4-4cb0-4b22-b7f9-560d8d32ae65" /> |
+
+### Workshop Types
+
+| Before | After |
+|--------|-------|
+| <img width="605" height="415" alt="image" src="https://github.com/user-attachments/assets/8ffb7c50-285e-4d3d-aacb-4ecf445dbf78" />
+ | <img width="817" height="816" alt="Screenshot 2026-04-13 000037" src="https://github.com/user-attachments/assets/b5319e71-e8da-4e30-b997-4e4577a65651" /> |
+
+# Screenshots of Redesigned Site
 <img width="1428" height="755" alt="Screenshot 2026-04-13 123851" src="https://github.com/user-attachments/assets/84b9f968-c843-4f50-bfc6-fe9b1a5e91e1" />
 <img width="817" height="816" alt="Screenshot 2026-04-13 000037" src="https://github.com/user-attachments/assets/b5319e71-e8da-4e30-b997-4e4577a65651" />
 <img width="1436" height="906" alt="Screenshot 2026-04-13 000115" src="https://github.com/user-attachments/assets/e2fa33e4-4cb0-4b22-b7f9-560d8d32ae65" />
 <img width="1881" height="907" alt="Screenshot 2026-04-13 000236" src="https://github.com/user-attachments/assets/0b7c99ae-e88b-4fd4-81b6-e00e6f7e994a" />
 <img width="1231" height="905" alt="Screenshot 2026-04-13 000206" src="https://github.com/user-attachments/assets/6cfd0162-8689-4adf-af3b-b57a61976305" />
 <img width="1843" height="834" alt="image" src="https://github.com/user-attachments/assets/99b35e1f-7f20-4dfe-a4e9-3478d40e9dc1" />
+
+# Mobile View
+
+
+|  |  |  |
+|--------|--------|--------|
+| <img width="231" height="324" alt="image" src="https://github.com/user-attachments/assets/ce763bc4-6872-4e96-9917-87af1219101d" />
+ | <img width="479" height="331" alt="image" src="https://github.com/user-attachments/assets/348884d4-39ab-4fd2-8849-d60f1c1ebd8d" />
+ | <img width="473" height="568" alt="image" src="https://github.com/user-attachments/assets/42d901bc-0f9f-4cf8-85b4-43d18cf1c99d" />
+ |
 
 
 
