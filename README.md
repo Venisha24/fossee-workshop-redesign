@@ -196,7 +196,7 @@ Focused on progressive enhancement instead of adding unnecessary complexity.
 
 <p align="center">
   <img src="https://github.com/user-attachments/assets/ce763bc4-6872-4e96-9917-87af1219101d" width="30%">
-  <img src="https://github.com/user-attachments/assets/348884d4-39ab-4fd2-8849-d60f1c1ebd8d" width="30%">
+  <img src="https://github.com/user-attachments/assets/8f7c2a81-aa91-4a71-ba88-7230b5540f22" width="30%">
   <img src="https://github.com/user-attachments/assets/42d901bc-0f9f-4cf8-85b4-43d18cf1c99d" width="30%">
 </p>
 
