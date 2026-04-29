@@ -56,7 +56,7 @@ Demo Credentials: instructor :- 📧 prabhu@iitb.ac.in /🔑 123456
 
 I went back and forth on this. Dark themes look impressive but the FOSSEE audience is largely students in India using the site during the day on varying screen qualities. A warm off-white (`#f5f4f0`) with a dark orange accent (`#d4622a`) is more readable in bright conditions and feels closer to the government/academic sites they're used to, without looking outdated.
 
-The orange was a deliberate nod to FOSSEE's actual brand color — I didn't just pick something generic.
+## The orange was a deliberate nod to FOSSEE's actual brand color — I didn't just pick something generic.
 ## ⚡ UX Enhancements
 ### Workshop filters that actually work
 
