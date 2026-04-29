@@ -194,14 +194,11 @@ Focused on progressive enhancement instead of adding unnecessary complexity.
 
 # Mobile View
 
-
-|  |  |  |
-|--------|--------|--------|
-| <img width="231" height="324" alt="image" src="https://github.com/user-attachments/assets/ce763bc4-6872-4e96-9917-87af1219101d" />
- | <img width="479" height="331" alt="image" src="https://github.com/user-attachments/assets/348884d4-39ab-4fd2-8849-d60f1c1ebd8d" />
- | <img width="473" height="568" alt="image" src="https://github.com/user-attachments/assets/42d901bc-0f9f-4cf8-85b4-43d18cf1c99d" />
- |
-
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/ce763bc4-6872-4e96-9917-87af1219101d" width="30%">
+  <img src="https://github.com/user-attachments/assets/348884d4-39ab-4fd2-8849-d60f1c1ebd8d" width="30%">
+  <img src="https://github.com/user-attachments/assets/42d901bc-0f9f-4cf8-85b4-43d18cf1c99d" width="30%">
+</p>
 
 
 
