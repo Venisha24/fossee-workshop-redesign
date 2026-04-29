@@ -23,9 +23,11 @@ I cloned the original repo and ran it locally first. A few things immediately st
 
 # 🛠️ Setup & Demo  
 ## Clone the repository
+```bash
 git clone https://github.com/Venisha24/fossee-workshop-redesign
 cd fossee-workshop-redesign-main
 cd fossee_v3
+```
 ## Install dependencies
 npm install
 
